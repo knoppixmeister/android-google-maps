@@ -23,12 +23,12 @@ public class MainActivity extends FragmentActivity {
 
 		MarkerOptions mo = new MarkerOptions();
 		mo.title("Custom Marker Title");
-		mo.position(new LatLng(24, 52));
+		mo.position(new LatLng(56, 24));
 
 		map.addMarker(mo);
 
 		map.getUiSettings().setCompassEnabled(true);
-		map.getUiSettings().setAllGesturesEnabled(false);
-		map.getUiSettings().setZoomControlsEnabled(false);
+		//map.getUiSettings().setAllGesturesEnabled(false);
+		//map.getUiSettings().setZoomControlsEnabled(false);
 	}
 }
