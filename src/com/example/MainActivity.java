@@ -2,12 +2,15 @@ package com.example;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.os.*;
 import android.support.v4.app.*;
+import android.util.Log;
 
 public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,12 @@ public class MainActivity extends FragmentActivity {
 		mo.position(new LatLng(56, 24));
 
 		map.addMarker(mo);
+		map.setOnInfoWindowClickListener(new OnInfoWindowClickListener() {
+			@Override
+			public void onInfoWindowClick(Marker marker) {
+				Log.e("AAA", marker.toString());
+			}
+		});
 
 		map.getUiSettings().setCompassEnabled(true);
 		//map.getUiSettings().setAllGesturesEnabled(false);
